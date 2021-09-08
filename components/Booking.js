@@ -5,7 +5,7 @@ const Booking = () => {
                 Your bookings
             </h1>
             <hr className="my-3" />
-            <section className="flex flex-wrap gap-1 mt-4 space-y-6">
+            <section className="flex flex-wrap gap-1 mt-6 space-y-6 md:space-y-0">
                 <article>
                     <h2 className="uppercase font-md">1. select date</h2>
                     <input type="date" name="" id="" className="p-2 my-2 bg-gray-100 rounded-md" />
@@ -19,8 +19,8 @@ const Booking = () => {
                     </ul>
                 </article>
                 <article className="flex flex-col flex-1 px-0 md:px-3">
-                    <h2 className="uppercase font-md">2. Machine available times</h2>
-                    <div className="flex gap-3">
+                    <h2 className="mb-3 uppercase font-md">2. Machine available times</h2>
+                    <div className="flex max-w-md space-x-3 overflow-scroll sm:max-w-full scrollbar-hide">
                         <div>
                             <h3 className="mb-3 font-bold text-gray-600 uppercase">Prusa i3</h3>
                             <ul className="flex flex-col items-start space-y-2">
@@ -31,6 +31,70 @@ const Booking = () => {
                                 <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">12:00-13:00</li>
                                 <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">13:00-14:00</li>
                                 <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">14:00-15:00</li>
+                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">15:00-16:00</li>
+                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">16:00-17:00</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 className="mb-3 font-bold text-gray-600 uppercase">Markforged</h3>
+                            <ul className="flex flex-col items-start space-y-2">
+                                <li className="inline-block px-6 py-1 border border-gray-200 rounded-lg justify-self-start">
+                                    10:00-11:00
+                                </li>
+                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">11:00-12:00</li>
+                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">12:00-13:00</li>
+                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">13:00-14:00</li>
+                                <li className="inline-block px-6 py-1 border border-gray-200 rounded-lg">
+                                    14:00-15:00
+                                </li>
+                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">15:00-16:00</li>
+                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">16:00-17:00</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 className="mb-3 font-bold text-gray-600 uppercase">Markforged</h3>
+                            <ul className="flex flex-col items-start space-y-2">
+                                <li className="inline-block px-6 py-1 border border-gray-200 rounded-lg justify-self-start">
+                                    10:00-11:00
+                                </li>
+                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">11:00-12:00</li>
+                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">12:00-13:00</li>
+                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">13:00-14:00</li>
+                                <li className="inline-block px-6 py-1 border border-gray-200 rounded-lg">
+                                    14:00-15:00
+                                </li>
+                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">15:00-16:00</li>
+                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">16:00-17:00</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 className="mb-3 font-bold text-gray-600 uppercase">Markforged</h3>
+                            <ul className="flex flex-col items-start space-y-2">
+                                <li className="inline-block px-6 py-1 border border-gray-200 rounded-lg justify-self-start">
+                                    10:00-11:00
+                                </li>
+                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">11:00-12:00</li>
+                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">12:00-13:00</li>
+                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">13:00-14:00</li>
+                                <li className="inline-block px-6 py-1 border border-gray-200 rounded-lg">
+                                    14:00-15:00
+                                </li>
+                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">15:00-16:00</li>
+                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">16:00-17:00</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 className="mb-3 font-bold text-gray-600 uppercase">Markforged</h3>
+                            <ul className="flex flex-col items-start space-y-2">
+                                <li className="inline-block px-6 py-1 border border-gray-200 rounded-lg justify-self-start">
+                                    10:00-11:00
+                                </li>
+                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">11:00-12:00</li>
+                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">12:00-13:00</li>
+                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">13:00-14:00</li>
+                                <li className="inline-block px-6 py-1 border border-gray-200 rounded-lg">
+                                    14:00-15:00
+                                </li>
                                 <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">15:00-16:00</li>
                                 <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">16:00-17:00</li>
                             </ul>
