@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import Link from 'next/link';
+
 const MachineItem = ({ name, img, type }) => {
     return (
         <article className="px-4 text-gray-800 rounded-md cursor-pointer ">
@@ -6,7 +8,10 @@ const MachineItem = ({ name, img, type }) => {
             <h3 className="my-4 font-bold capitalize">{name}</h3>
             <div className="flex items-center justify-between">
                 <p>Tech.: {type.toUpperCase()}</p>
-                <button className="text-white btn">Book</button>
+
+                <Link href="/en/reserve-machine">
+                    <p className="btn">Book</p>
+                </Link>
             </div>
         </article>
     );
