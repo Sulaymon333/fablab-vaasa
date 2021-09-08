@@ -1,82 +1,44 @@
-import Head from 'next/head'
+import Head from 'next/head';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
+import Machines from '../components/Machines';
 
-export default function Home() {
-  return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+export default function Home({ machines }) {
+    return (
+        <div>
+            <Head>
+                <title>Create Next App</title>
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
 
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
-
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
-            pages/index.js
-          </code>
-        </p>
-
-        <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+            <Header />
+            <main className="py-10 mx-auto max-w-screen-2xl">
+                <h2 className="text-2xl font-medium">Reserve a 3D Printer</h2>
+                <h3 className="py-4 text-lg font-light">
+                    As an student or even a hobbysit, you can reserve time for using any of the 3D printer at
+                    Technobothnia laboratory easily online.
+                </h3>
+                <ol className="mt-3 ml-4 list-decimal">
+                    <li>Choose the machine you would like to use</li>
+                    <li>Select the time and reservation item</li>
+                    <li>
+                        Enter your booking details and send your reservation. You will receive an email with a link to
+                        your booking information, which you can use to cancel your reservation if necessary.
+                    </li>
+                </ol>
+                <Machines machines={machines.data} />
+            </main>
+            <Footer />
         </div>
-      </main>
+    );
+}
 
-      <footer className="flex items-center justify-center w-full h-24 border-t">
-        <a
-          className="flex items-center justify-center"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
-        </a>
-      </footer>
-    </div>
-  )
+export async function getStaticProps() {
+    const res = await fetch('https://raw.githubusercontent.com/Sulaymon333/machine-data/main/machineData.json');
+    const machines = await res.json();
+    return {
+        props: {
+            machines,
+        },
+    };
 }

@@ -1,0 +1,46 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "prusa",
+            "type": "fdm",
+            "img": "https://i.ytimg.com/vi/hwNIzQLtHnU/maxresdefault.jpg"
+        },
+        {
+            "id": 2,
+            "name": "ultimaker-2",
+            "type": "fdm",
+            "img": "https://www.dynamism.com/media/catalog/product/cache/207e23213cf636ccdef205098cf3c8a3/u/l/ultimaker-2-plus-connect-2.jpg"
+        },
+        {
+            "id": 3,
+            "name": "ultimaker-5",
+            "type": "fdm",
+            "img": "https://www.3d-tulostus.fi/WebRoot/vilkas04/Shops/20131018-11092-264846-1/5ADD/BBED/180A/EEC3/559F/0A28/1011/ACF9/s5_korjattu_kuva.png"
+        },
+        {
+            "id": 4,
+            "name": "prusa-i3",
+            "type": "fdm",
+            "img": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.prusa3d.com%2Foriginal-prusa-i3-mk3%2F&psig=AOvVaw04Th39WAUPeBX39wV26WrN&ust=1631178136128000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCMCAnZ6C7_ICFQAAAAAdAAAAABAD"
+        },
+        {
+            "id": 5,
+            "name": "prusa",
+            "type": "fdm",
+            "img": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.prusa3d.com%2Foriginal-prusa-i3-mk3%2F&psig=AOvVaw04Th39WAUPeBX39wV26WrN&ust=1631178136128000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCMCAnZ6C7_ICFQAAAAAdAAAAABAD"
+        },
+        {
+            "id": 6,
+            "name": "prusa",
+            "type": "fdm",
+            "img": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.prusa3d.com%2Foriginal-prusa-i3-mk3%2F&psig=AOvVaw04Th39WAUPeBX39wV26WrN&ust=1631178136128000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCMCAnZ6C7_ICFQAAAAAdAAAAABAD"
+        },
+        {
+            "id": 7,
+            "name": "prusa",
+            "type": "fdm",
+            "img": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.prusa3d.com%2Foriginal-prusa-i3-mk3%2F&psig=AOvVaw04Th39WAUPeBX39wV26WrN&ust=1631178136128000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCMCAnZ6C7_ICFQAAAAAdAAAAABAD"
+        }
+    ]
+}
