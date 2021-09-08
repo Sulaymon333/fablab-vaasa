@@ -8,11 +8,11 @@ function Header() {
                     <h1 className="text-4xl font-bold">FablabVaasa</h1>
                 </div>
                 <ul className="flex items-center space-x-5">
-                    <Link href="/en" className="p-0 m-0">
-                        <li>English</li>
+                    <Link href="/en">
+                        <li className="link">English</li>
                     </Link>
                     <Link href="/fi">
-                        <li>Finnish</li>
+                        <li className="link">Finnish</li>
                     </Link>
                 </ul>
             </nav>

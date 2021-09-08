@@ -4,7 +4,7 @@
 
 @layer components {
     .link {
-        @apply cursor-pointer hover:underline;
+        @apply border-gray-500 cursor-pointer hover:border-b-2;
     }
 
     .btn {
