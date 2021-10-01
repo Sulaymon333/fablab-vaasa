@@ -4,44 +4,43 @@
             "id": 1,
             "name": "prusa",
             "type": "fdm",
-            "img": "https://i.ytimg.com/vi/hwNIzQLtHnU/maxresdefault.jpg",
-            "timeSlots": "['9:00-10:00','10:00-11:00', '11:00-12:00', '12:00-13:00', '13:00-14:00', '14:00-15:00', '15:00-16:00', '16:00-17:00']"
+            "img": "https://cdn.prusa3d.com/wp-content/uploads/2021/01/MK3Splus_small.png"
         },
         {
             "id": 2,
             "name": "ultimaker-2",
             "type": "fdm",
-            "img": "https://www.dynamism.com/media/catalog/product/cache/207e23213cf636ccdef205098cf3c8a3/u/l/ultimaker-2-plus-connect-2.jpg"
+            "img": "https://www.atea.fi/eshop/img/3/f3266878/t16050759105161605860413652/s190X12c/"
         },
         {
             "id": 3,
             "name": "ultimaker-5",
             "type": "fdm",
-            "img": "https://www.3d-tulostus.fi/WebRoot/vilkas04/Shops/20131018-11092-264846-1/5ADD/BBED/180A/EEC3/559F/0A28/1011/ACF9/s5_korjattu_kuva.png"
+            "img": "https://cdn03.plentymarkets.com/ioseuwg7moqp/item/images/24319/full/Ultimaker-S5-Air-Manager-S5-Air-Manager-24319_4.jpg"
         },
         {
             "id": 4,
             "name": "prusa-i3",
             "type": "fdm",
-            "img": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.prusa3d.com%2Foriginal-prusa-i3-mk3%2F&psig=AOvVaw04Th39WAUPeBX39wV26WrN&ust=1631178136128000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCMCAnZ6C7_ICFQAAAAAdAAAAABAD"
+            "img": "https://cdn.shop.prusa3d.com/2623/original-prusa-i3-mk3s-3d-printer.jpg"
         },
         {
             "id": 5,
-            "name": "prusa",
-            "type": "fdm",
-            "img": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.prusa3d.com%2Foriginal-prusa-i3-mk3%2F&psig=AOvVaw04Th39WAUPeBX39wV26WrN&ust=1631178136128000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCMCAnZ6C7_ICFQAAAAAdAAAAABAD"
+            "name": "creality",
+            "type": "sla",
+            "img": "https://www.creality3dofficial.com/files/goods/LD-006.jpg"
         },
         {
             "id": 6,
-            "name": "prusa",
+            "name": "wanhao",
             "type": "fdm",
-            "img": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.prusa3d.com%2Foriginal-prusa-i3-mk3%2F&psig=AOvVaw04Th39WAUPeBX39wV26WrN&ust=1631178136128000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCMCAnZ6C7_ICFQAAAAAdAAAAABAD"
+            "img": "https://www.3dprintersonlinestore.com/image/cache/catalog/wanhao/d5s/main/1-387x480-0.jpg"
         },
         {
             "id": 7,
-            "name": "prusa",
+            "name": "markforged onyx pro",
             "type": "fdm",
-            "img": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.prusa3d.com%2Foriginal-prusa-i3-mk3%2F&psig=AOvVaw04Th39WAUPeBX39wV26WrN&ust=1631178136128000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCMCAnZ6C7_ICFQAAAAAdAAAAABAD"
+            "img": "https://www.mark3d.com/en/wp-content/uploads/sites/6/2018/04/MARK-TWO-Mark3D-kaufen.jpg"
         }
     ]
 }
