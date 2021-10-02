@@ -3,10 +3,10 @@ import Link from 'next/link';
 import { useDispatch } from 'react-redux';
 import { addToBasket } from '../slices/basketSlice';
 
-const MachineItem = ({ id, name, img, type, handleClick }) => {
+const MachineItem = ({ id, name, img, type, timeSlots }) => {
     const dispatch = useDispatch();
     const addItemToBasket = () => {
-        const machine = { id, name, type, img };
+        const machine = { id, name, type, img, timeSlots };
         dispatch(addToBasket(machine));
     };
 
@@ -17,7 +17,7 @@ const MachineItem = ({ id, name, img, type, handleClick }) => {
             <div className="flex items-center justify-between">
                 <p>Tech.: {type.toUpperCase()}</p>
                 <Link href="/en/reserve-machine">
-                    <p onClick={handleClick} className="btn">
+                    <p onClick={addItemToBasket} className="btn">
                         Book
                     </p>
                 </Link>

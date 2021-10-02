@@ -1,4 +1,10 @@
+import { useSelector } from 'react-redux';
+import { selectItems } from '../slices/basketSlice';
+import { useState } from 'react';
+
 const Booking = () => {
+    const [selected, setSelected] = useState(true);
+    const basketItems = useSelector(selectItems);
     return (
         <div className="px-3 py-10 mx-auto">
             <h1 className="inline-block p-2 px-3 text-lg font-medium text-white uppercase bg-gray-600 rounded-lg">
@@ -21,100 +27,28 @@ const Booking = () => {
                 <article className="flex flex-col flex-1 px-0 md:px-3">
                     <h2 className="mb-3 uppercase font-md">2. Machine available times</h2>
                     <div className="flex max-w-md space-x-3 overflow-scroll sm:max-w-full scrollbar-hide">
-                        <div>
-                            <h3 className="mb-3 font-bold text-gray-600 uppercase">Prusa i3</h3>
-                            <ul className="flex flex-col items-start space-y-2">
-                                <li className="inline-block px-6 py-1 border border-gray-200 rounded-lg justify-self-start">
-                                    10:00-11:00
-                                </li>
-                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">11:00-12:00</li>
-                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">12:00-13:00</li>
-                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">13:00-14:00</li>
-                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">14:00-15:00</li>
-                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">15:00-16:00</li>
-                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">16:00-17:00</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h3 className="mb-3 font-bold text-gray-600 uppercase">Markforged</h3>
-                            <ul className="flex flex-col items-start space-y-2">
-                                <li className="inline-block px-6 py-1 border border-gray-200 rounded-lg justify-self-start">
-                                    10:00-11:00
-                                </li>
-                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">11:00-12:00</li>
-                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">12:00-13:00</li>
-                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">13:00-14:00</li>
-                                <li className="inline-block px-6 py-1 border border-gray-200 rounded-lg">
-                                    14:00-15:00
-                                </li>
-                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">15:00-16:00</li>
-                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">16:00-17:00</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h3 className="mb-3 font-bold text-gray-600 uppercase">Markforged</h3>
-                            <ul className="flex flex-col items-start space-y-2">
-                                <li className="inline-block px-6 py-1 border border-gray-200 rounded-lg justify-self-start">
-                                    10:00-11:00
-                                </li>
-                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">11:00-12:00</li>
-                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">12:00-13:00</li>
-                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">13:00-14:00</li>
-                                <li className="inline-block px-6 py-1 border border-gray-200 rounded-lg">
-                                    14:00-15:00
-                                </li>
-                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">15:00-16:00</li>
-                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">16:00-17:00</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h3 className="mb-3 font-bold text-gray-600 uppercase">Markforged</h3>
-                            <ul className="flex flex-col items-start space-y-2">
-                                <li className="inline-block px-6 py-1 border border-gray-200 rounded-lg justify-self-start">
-                                    10:00-11:00
-                                </li>
-                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">11:00-12:00</li>
-                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">12:00-13:00</li>
-                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">13:00-14:00</li>
-                                <li className="inline-block px-6 py-1 border border-gray-200 rounded-lg">
-                                    14:00-15:00
-                                </li>
-                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">15:00-16:00</li>
-                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">16:00-17:00</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h3 className="mb-3 font-bold text-gray-600 uppercase">Markforged</h3>
-                            <ul className="flex flex-col items-start space-y-2">
-                                <li className="inline-block px-6 py-1 border border-gray-200 rounded-lg justify-self-start">
-                                    10:00-11:00
-                                </li>
-                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">11:00-12:00</li>
-                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">12:00-13:00</li>
-                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">13:00-14:00</li>
-                                <li className="inline-block px-6 py-1 border border-gray-200 rounded-lg">
-                                    14:00-15:00
-                                </li>
-                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">15:00-16:00</li>
-                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">16:00-17:00</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h3 className="mb-3 font-bold text-gray-600 uppercase">Markforged</h3>
-                            <ul className="flex flex-col items-start space-y-2">
-                                <li className="inline-block px-6 py-1 border border-gray-200 rounded-lg justify-self-start">
-                                    10:00-11:00
-                                </li>
-                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">11:00-12:00</li>
-                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">12:00-13:00</li>
-                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">13:00-14:00</li>
-                                <li className="inline-block px-6 py-1 border border-gray-200 rounded-lg">
-                                    14:00-15:00
-                                </li>
-                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">15:00-16:00</li>
-                                <li className="inline-block px-6 py-1 bg-yellow-300 rounded-lg">16:00-17:00</li>
-                            </ul>
-                        </div>
+                        {basketItems.map((item) => {
+                            return (
+                                <div key={item.id}>
+                                    <h3 className="mb-3 font-bold text-gray-600 uppercase">
+                                        {item.name.length > 11 ? `${item.name.slice(0, 8)}...` : item.name}
+                                    </h3>
+                                    <ul className="flex flex-col items-start space-y-2">
+                                        {item.timeSlots.map((timeslot) => (
+                                            <li
+                                                key={item.id + '-' + Math.random()}
+                                                className="inline-block px-6 py-1 bg-yellow-300 border border-gray-200 rounded-lg"
+                                            >
+                                                {timeslot}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            );
+                        })}
+                        {basketItems.length === 0 && (
+                            <p className="p-4 bg-yellow-100 rounded-lg">Please select machines from homepage</p>
+                        )}
                     </div>
                 </article>
                 <form>

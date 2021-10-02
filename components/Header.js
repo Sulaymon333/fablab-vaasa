@@ -7,7 +7,7 @@ import { selectItems } from '../slices/basketSlice';
 
 function Header() {
     const [mouseEntered, setMouseEntered] = useState(false);
-    const items = useSelector(selectItems);
+    const basketItems = useSelector(selectItems);
 
     const handleClick = () => {
         setMouseEntered(!mouseEntered);
@@ -24,12 +24,12 @@ function Header() {
                     <li className="link">Finnish</li>
                     <li className="relative flex items-center" onClick={handleClick}>
                         <span className="absolute w-5 h-5 text-sm font-bold text-center text-gray-700 bg-white rounded-full -right-2 -top-2">
-                            {items.length}
+                            {basketItems.length}
                         </span>
                         <ShoppingCartIcon className="h-8 text-gray-600" />
                     </li>
                 </ul>
-                {mouseEntered && <Checkout basketItems={items} />}
+                {mouseEntered && <Checkout basketItems={basketItems} />}
             </nav>
         </header>
     );
