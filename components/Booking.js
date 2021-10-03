@@ -1,14 +1,12 @@
 import { useSelector } from 'react-redux';
 import { selectItems, updateBasket } from '../slices/basketSlice';
 import { useState, useRef } from 'react';
-import { v4 as uuidv4 } from 'uuid';
 import { format } from 'date-fns';
 import { useDispatch } from 'react-redux';
 
 const Booking = () => {
     const [booked, setBooked] = useState([]);
     const basketItems = useSelector(selectItems);
-    const [date, setDate] = useState(new Date());
     const [dateFormatted, setDateFormatted] = useState(format(new Date(), 'dd MMM, yyyy'));
     const inputRef = useRef(null);
 
@@ -59,19 +57,6 @@ const Booking = () => {
     const handleDateBlur = (e) => {
         e.target.type = 'text';
     };
-
-    const removeBooking = (id) => {
-        const newBooked = booked.filter((item) => item.id !== id);
-        setBooked(newBooked);
-    };
-
-    const info = [...basketItems].map((item) => {
-        if (item.timeSlots.some((item) => item.available === false)) {
-            return { ...item, timeSlots: item.timeSlots.filter((slot) => slot.available === false) };
-        } else {
-            return item;
-        }
-    });
 
     return (
         <div className="px-3 py-10 mx-auto">
@@ -141,25 +126,6 @@ const Booking = () => {
                 <form>
                     <h2 className="uppercase font-md">3. Booking details</h2>
                     <div className="my-3 space-y-2">
-                        {/* {booked.map((item) => (
-                            <div
-                                key={item.name + item.timeSlotsSelected}
-                                className="relative p-2 text-white bg-gray-600 rounded-2xl"
-                            >
-                                <p>{item.name}</p>
-                                <p className="font-bold">
-                                    {item.date} {item.timeSlotsSelected}
-                                </p>
-                                <span
-                                    className="absolute top-0 right-0 flex items-center justify-center w-6 h-6 font-bold text-yellow-400 bg-white rounded-full cursor-pointer"
-                                    n
-                                    onClick={() => removeBooking(item.id)}
-                                >
-                                    x
-                                </span>
-                            </div>
-                        ))} */}
-
                         {basketItems.map((item1) =>
                             item1.timeSlots.map((item) => {
                                 if (item.available === false) {
@@ -170,12 +136,14 @@ const Booking = () => {
                                         >
                                             <p>{item1.name}</p>
                                             <p className="font-bold">
-                                                {'jdjdj'} {item.time}
+                                                {dateFormatted} {item.time}
                                             </p>
                                             <span
                                                 className="absolute top-0 right-0 flex items-center justify-center w-6 h-6 font-bold text-yellow-400 bg-white rounded-full cursor-pointer"
                                                 n
-                                                onClick={() => removeBooking(item.id)}
+                                                onClick={() =>
+                                                    handleClick(item1.id, item1.name, item1.img, item1.type, item)
+                                                }
                                             >
                                                 x
                                             </span>
