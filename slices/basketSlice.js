@@ -30,10 +30,20 @@ export const basketSlice = createSlice({
             }
             state.items = newBasket;
         },
+        updateBasket: function (state, action) {
+            const index = state.items.findIndex((basketItem) => basketItem.id === action.payload.id);
+            let newBasket = [...state.items];
+            if (index >= 0) {
+                newBasket[index] = action.payload;
+            } else {
+                console.warn(`Can't update product (id: ${action.payload.id}) since is'nt in basket`);
+            }
+            state.items = newBasket;
+        },
     },
 });
 
-export const { addToBasket, removeFromBasket } = basketSlice.actions;
+export const { addToBasket, removeFromBasket, updateBasket } = basketSlice.actions;
 
 // Selectors - This is how we pull information from the Global store slice
 export const selectItems = (state) => state.basket.items;
