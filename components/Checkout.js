@@ -8,7 +8,7 @@ const Checkout = ({ basketItems }) => {
     const dispatch = useDispatch();
 
     return (
-        <div className="absolute right-8 z-50 p-4 px-5 pl-3 rounded-lg shadow-lg bg-gray-50 top-[5.5rem]">
+        <div className="absolute right-0 z-50 p-4 px-5 pl-3 rounded-lg shadow-lg bg-gray-50 top-[4rem]">
             <div className="flex flex-col">
                 <ul className="flex-col space-y-4">
                     {basketItems.map((item) => {

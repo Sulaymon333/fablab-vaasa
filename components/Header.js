@@ -15,7 +15,7 @@ function Header() {
 
     return (
         <header className="sticky top-0 z-40 p-6 bg-yellow-300">
-            <nav className="flex justify-between mx-auto text-gray-700 max-w-screen-2xl">
+            <nav className="relative flex justify-between mx-auto text-gray-700 max-w-screen-2xl">
                 <Link href="/">
                     <h1 className="text-4xl font-bold hover:border-b-0 link">FablabVaasa</h1>
                 </Link>

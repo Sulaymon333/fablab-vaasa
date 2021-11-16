@@ -1,14 +1,17 @@
 import { useSelector } from 'react-redux';
 import { selectItems, updateBasket } from '../slices/basketSlice';
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { format } from 'date-fns';
 import { useDispatch } from 'react-redux';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 const Booking = () => {
     const [booked, setBooked] = useState([]);
     const basketItems = useSelector(selectItems);
+    const [startDate, setStartDate] = useState(new Date());
     const [dateFormatted, setDateFormatted] = useState(format(new Date(), 'dd MMM, yyyy'));
-    const inputRef = useRef(null);
+    const [formData, setFormData] = useState({ firstName_LastName: '', email: '', phone: '' });
 
     const dispatch = useDispatch();
 
@@ -45,17 +48,19 @@ const Booking = () => {
         setBooked([...booked, data]);
     };
 
-    const handleDateChange = (e) => {
-        setDate(e.target.value);
-        setDateFormatted(format(new Date(e.target.value), 'dd MMM, yyyy'));
+    const handleDateChange = (date) => {
+        setStartDate(date);
+        setDateFormatted(format(new Date(date), 'dd MMM, yyyy'));
     };
 
-    const handleDateFocus = (e) => {
-        e.target.type = 'date';
+    const handleFormChange = (e) => {
+        const inputValue = e.target.value;
+        setFormData({ ...formData, [e.target.name]: inputValue });
     };
 
-    const handleDateBlur = (e) => {
-        e.target.type = 'text';
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(formData);
     };
 
     return (
@@ -67,14 +72,14 @@ const Booking = () => {
             <section className="flex flex-wrap gap-1 mt-6 space-y-6 md:space-y-0">
                 <article>
                     <h2 className="uppercase font-md">1. select date</h2>
-                    <input
-                        type="text"
+                    <DatePicker
+                        selected={startDate}
+                        onChange={(date) => handleDateChange(date)}
+                        dateFormat="dd MMM, yyyy"
+                        filterDate={(date) => date.getDay() !== 0 && date.getDay() !== 6}
+                        minDate={new Date()}
+                        isClearable={true}
                         className="p-2 my-2 bg-gray-100 rounded-md"
-                        value={dateFormatted}
-                        onChange={(e) => handleDateChange(e)}
-                        onFocus={handleDateFocus}
-                        onBlur={handleDateBlur}
-                        ref={inputRef}
                     />
 
                     <h3 className="font-bold text-gray-600">Booking info</h3>
@@ -123,7 +128,7 @@ const Booking = () => {
                         )}
                     </div>
                 </article>
-                <form>
+                <article>
                     <h2 className="uppercase font-md">3. Booking details</h2>
                     <div className="my-3 space-y-2">
                         {basketItems.map((item1) =>
@@ -156,38 +161,59 @@ const Booking = () => {
                         )}
                     </div>
                     <h3 className="mb-3 font-bold text-gray-600">Your Info:</h3>
-                    <div>
+                    <form onSubmit={handleSubmit}>
                         <div>
-                            <label htmlFor="">
+                            <label htmlFor="firstName_LastName" className="text-sm">
                                 Firstname Lastname<sup>*</sup>
                             </label>
                             <br />
-                            <input type="text" name="" id="" className="w-full p-2 my-2 bg-gray-100 rounded-md" />
+                            <input
+                                type="text"
+                                name="firstName_LastName"
+                                id="firstName_LastName"
+                                value={formData.firstName_LastName}
+                                placeholder="John Doe"
+                                className="w-full p-2 my-2 bg-gray-100 rounded-md"
+                                onChange={handleFormChange}
+                            />
                         </div>
                         <div>
-                            <label htmlFor="">
+                            <label htmlFor="email" className="text-sm">
                                 Email<sup>*</sup>
                             </label>
                             <br />
-                            <input type="email" name="" id="" className="w-full p-2 my-2 bg-gray-100 rounded-md" />
+                            <input
+                                type="email"
+                                name="email"
+                                id="email"
+                                value={formData.email}
+                                placeholder="johdoe@email.com"
+                                className="w-full p-2 my-2 bg-gray-100 rounded-md"
+                                onChange={handleFormChange}
+                            />
                         </div>
                         <div>
-                            <label htmlFor="">
+                            <label htmlFor="phone" className="text-sm">
                                 Phone<sup>*</sup>
                             </label>
                             <br />
                             <input
                                 type="tel"
-                                name=""
-                                id=""
+                                name="phone"
+                                id="phone"
+                                value={formData.phone}
+                                placeholder="0557678654"
                                 className="w-full p-2 my-2 bg-gray-100 rounded-md"
-                                pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                                pattern="[0-9]{10}"
+                                onChange={handleFormChange}
                             />
                         </div>
 
-                        <button className="mt-4 btn">confirm reservation</button>
-                    </div>
-                </form>
+                        <button className="mt-4 btn" type="submit">
+                            confirm reservation
+                        </button>
+                    </form>
+                </article>
             </section>
         </div>
     );
