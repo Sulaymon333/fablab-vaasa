@@ -1,12 +1,14 @@
 import { useSelector } from 'react-redux';
-import { selectItems, updateBasket } from '../slices/basketSlice';
+import { selectItems, updateBasket, resetBasket } from '../slices/basketSlice';
 import { useState } from 'react';
 import { format } from 'date-fns';
+import { useRouter } from 'next/router';
 import { useDispatch } from 'react-redux';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
 const Booking = () => {
+    const router = useRouter();
     const [booked, setBooked] = useState([]);
     const basketItems = useSelector(selectItems);
     const [startDate, setStartDate] = useState(new Date());
@@ -60,6 +62,8 @@ const Booking = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        dispatch(resetBasket());
+        router.push('/');
         console.log(formData);
     };
 
